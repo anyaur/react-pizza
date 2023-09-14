@@ -22,16 +22,17 @@ function useOutsideClick(initialIsVisible) {
   return { ref, isShow, setIsShow };
 }
 
+export const sortList = [
+  { name: 'популярности', sortProperty: 'rating' },
+  { name: 'возрастанию цены', sortProperty: 'price' },
+  { name: 'убыванию цены', sortProperty: '-price' },
+  { name: 'алфавиту', sortProperty: 'title' },
+];
+
 function Sort() {
   const activeSortType = useSelector((state) => state.filter.activeSortType);
   const dispatch = useDispatch();
   const { ref, isShow, setIsShow } = useOutsideClick(false);
-  const sortList = [
-    { name: 'популярности', sortProperty: 'rating' },
-    { name: 'возрастанию цены', sortProperty: 'price' },
-    { name: 'убыванию цены', sortProperty: '-price' },
-    { name: 'алфавиту', sortProperty: 'title' },
-  ];
 
   const onClickListItem = (obj) => {
     dispatch(setActiveSortType(obj));

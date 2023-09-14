@@ -7,7 +7,7 @@ const NotFoundBlock = () => {
     <h1 className={classes.root}>
       <span>😔</span>
       <br />
-      Not found
+      Пиццы не найдены
     </h1>
   );
 };

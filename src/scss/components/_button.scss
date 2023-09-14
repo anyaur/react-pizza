@@ -23,7 +23,11 @@
   svg {
     transition: all $duration ease-in-out;
   }
-
+  //неактивная кнопка
+  &:disabled {
+    background-color: grey;
+    pointer-events: none;
+  }
   &:hover {
     background-color: darken($orange, 8%);
   }
